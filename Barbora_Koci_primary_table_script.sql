@@ -16,7 +16,8 @@ LEFT JOIN czechia_payroll_value_type cpvt
 	ON cp.value_type_code = cpvt.code
 WHERE cp.value_type_code = 5958
 AND cp.calculation_code = 200
-AND cpib.name IS NOT NULL 
+AND cpib.name IS NOT NULL
+AND cp.payroll_year BETWEEN 2006 AND 2018
 GROUP BY porp, name, year1, quarter1
 ORDER BY porp, name, year1)
 UNION ALL	
@@ -34,4 +35,4 @@ LEFT JOIN czechia_region cr
 WHERE cr.name IS NOT NULL
 GROUP BY porp, name, year1, quarter1
 ORDER BY porp, name, year1)
-	;
+;

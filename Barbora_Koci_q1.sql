@@ -16,7 +16,7 @@ WITH wages AS (
 		JOIN wages w2 
 		    ON w.name = w2.name
 		    AND w.year1 = w2.year1 + 1
-		    AND w.year1 < 2021
+		    AND w.year1 <= 2018
 		WHERE (w.avg_wages - w2.avg_wages) < 0
 		ORDER BY diff 
 		;
